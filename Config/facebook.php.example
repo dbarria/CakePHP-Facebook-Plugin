@@ -9,6 +9,7 @@
   		'apiKey' => 'YOUR_API_KEY',
   		'secret' => 'YOUR_SECRET',
   		'cookie' => true,
+      'scope' => 'email,website',
   		'locale' => 'en_US',
   		)
   	);

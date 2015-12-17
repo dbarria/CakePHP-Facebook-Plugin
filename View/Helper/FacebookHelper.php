@@ -157,6 +157,10 @@ class FacebookHelper extends AppHelper {
 				unset($options['id']);
 			}
 			unset($options['label'], $options['custom'], $options['redirect'], $options['img'], $options['alt']);
+			// if(!empty($options['perms'])){
+			// 	$options['data-scope']=$options['perms'];
+			// 	unset($options['perms']);
+			// }
 			return $this->__fbTag('fb:login-button', $label, $options);
 		}
 	}
@@ -533,7 +537,7 @@ class FacebookHelper extends AppHelper {
 
 	public function init($options = null, $reload = true) {
 		$options = array_merge(array(
-			'perms' => 'email'
+			'perms' => Configure::read('Facebook.scope')
 		), (array)$this->loginOptions);
 		if ($appId = FacebookInfo::getConfig('appId')) {
 			$init = '<div id="fb-root"></div>';
