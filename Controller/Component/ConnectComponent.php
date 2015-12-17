@@ -197,7 +197,6 @@ class ConnectComponent extends Component {
 	*/
 	public function user($field = null){
 		$perms='fields=' . Configure::read('Facebook.scope');
-		$this->Controller->Session->write('FB.Me', $this->FB->api('/me?'+$perms));
 		if(isset($this->uid)){
 			if($this->Controller->Session->read('FB.Me') == null){
 				$this->Controller->Session->write('FB.Me', $this->FB->api('/me?'.$perms));
